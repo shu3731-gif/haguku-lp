@@ -56,9 +56,11 @@
   h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.02em}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
-  /* 日本語の改行を整える：文節単位で折る＋最終行の孤立を抑制 */
-  h1,h2,h3,p,.eyebrow,figcaption{word-break:auto-phrase;line-break:strict;text-wrap:pretty}
+  /* 日本語の改行を整える：最終行の孤立を抑制（全ブラウザ） */
+  h1,h2,h3,p,.eyebrow,figcaption{line-break:strict;text-wrap:pretty}
   h1,h2{text-wrap:balance}
+  /* 本文は文節単位で改行（BudouXが挿入する<wbr>でのみ折る／全ブラウザ対応） */
+  .lead,.check p,.empathy-close,.loss .inner p,.loss h3,.sec-head p,.step p,.voice p,.flow-item p,.faq-a p,.offer-card .sub{word-break:keep-all;overflow-wrap:anywhere}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   section{position:relative}
 
@@ -280,7 +282,8 @@
     .blob{width:320px;height:320px}
     .steps,.ba-grid,.voice-grid{grid-template-columns:1fr}
     .check-grid{grid-template-columns:1fr}
-    .sec-head h2,.empathy h2{font-size:27px}
+    .sec-head h2{font-size:27px}
+    .empathy h2{font-size:21px}
     .final h2{font-size:30px}
     .header-cta{display:none}
     .mobile-cta{display:block}
@@ -643,6 +646,16 @@
     if (lead) lead.textContent = '自己流ケアでも、普通のサロンでも治らなかった爪へ。プロが状態を診断し、あなた専用の育成プランを設計します。';
   }
   window.dataLayer.push({ event: 'ab_variant_view', variant });
+</script>
+
+<!-- 日本語の文節改行（BudouX）：本文の<wbr>挿入で全ブラウザ対応 -->
+<script type="module">
+  import { loadDefaultJapaneseParser } from 'https://cdn.jsdelivr.net/npm/budoux@0.6.4/+esm';
+  const parser = loadDefaultJapaneseParser();
+  const sel = '.lead,.check p,.empathy-close,.loss .inner p,.loss h3,.sec-head p,.step p,.voice p,.flow-item p,.faq-a p,.offer-card .sub';
+  document.querySelectorAll(sel).forEach(el => {
+    el.innerHTML = parser.translateHTMLString(el.innerHTML);
+  });
 </script>
 </body>
 </html>
