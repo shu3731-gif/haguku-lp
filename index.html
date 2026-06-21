@@ -59,8 +59,10 @@
   /* 日本語の改行を整える：最終行の孤立を抑制（全ブラウザ） */
   h1,h2,h3,p,.eyebrow,figcaption{line-break:strict;text-wrap:pretty}
   h1,h2{text-wrap:balance}
-  /* 本文は文節単位で改行（BudouXが挿入する<wbr>でのみ折る／全ブラウザ対応） */
-  .lead,.check p,.empathy-close,.loss .inner p,.loss h3,.sec-head p,.step p,.voice p,.flow-item p,.faq-a p,.offer-card .sub{word-break:keep-all;overflow-wrap:anywhere}
+  /* 本文・見出しは文節単位で改行（BudouXが全テキストに挿入／全ブラウザ対応） */
+  p,h2,h3,h4,figcaption,.faq-q .q,.voice .who span,.eyebrow{word-break:keep-all;overflow-wrap:anywhere}
+  /* 自前で<br>制御するキメ見出しは除外 */
+  .hero h1,.empathy h2{word-break:normal;overflow-wrap:normal}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   section{position:relative}
 
@@ -648,13 +650,21 @@
   window.dataLayer.push({ event: 'ab_variant_view', variant });
 </script>
 
-<!-- 日本語の文節改行（BudouX）：本文の<wbr>挿入で全ブラウザ対応 -->
+<!-- 日本語の文節改行（BudouX）：ページ内の全テキストを自動処理／全ブラウザ対応 -->
 <script type="module">
   import { loadDefaultJapaneseParser } from 'https://cdn.jsdelivr.net/npm/budoux@0.6.4/+esm';
   const parser = loadDefaultJapaneseParser();
-  const sel = '.lead,.check p,.empathy-close,.loss .inner p,.loss h3,.sec-head p,.step p,.voice p,.flow-item p,.faq-a p,.offer-card .sub';
+  const skip = new Set();
+  document.querySelectorAll('.hero h1, .empathy h2').forEach(e => skip.add(e));
+  const ZWSP = '​';
+  const hasJa = s => /[぀-ヿ一-鿿]/.test(s);
+  const sel = 'p, h2, h3, h4, figcaption, .faq-q .q, .voice .who span, .eyebrow';
   document.querySelectorAll(sel).forEach(el => {
-    el.innerHTML = parser.translateHTMLString(el.innerHTML);
+    if (skip.has(el) || !hasJa(el.textContent)) return;
+    let html = parser.translateHTMLString(el.innerHTML);
+    /* 区切り記号の直後にも改行候補を補う（BudouXが繋ぎっぱなしの箇所対策） */
+    html = html.replace(/([、。・｜／＋＝：])/g, '$1' + ZWSP);
+    el.innerHTML = html;
   });
 </script>
 </body>
