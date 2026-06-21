@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>haguku｜通うほど、自爪が育つネイルサロン｜自爪育成・ダメージケア専門</title>
+<meta name="description" content="薄くなった爪・変形した爪も、育てながら楽しむ。haguku は自爪育成・ダメージケア専門のネイルサロン。初回限定 爪ダメージ診断＋ケア体験を¥4,980でご予約いただけます。" />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<meta name="theme-color" content="#A56A3E" />
+
+<!-- OGP / Twitter Card（本番では og:url / og:image を実ドメインの絶対URLに置き換え） -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="haguku" />
+<meta property="og:title" content="haguku｜通うほど、自爪が育つネイルサロン" />
+<meta property="og:description" content="薄い爪も変形した爪も、育てながら楽しむ。自爪育成・ダメージケア専門。初回¥4,980で爪ダメージ診断＋ケア体験。" />
+<meta property="og:url" content="https://haguku.jp/" />
+<meta property="og:image" content="https://haguku.jp/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="haguku｜通うほど、自爪が育つネイルサロン" />
+<meta name="twitter:description" content="自爪育成・ダメージケア専門。初回¥4,980で爪ダメージ診断＋ケア体験。" />
+<meta name="twitter:image" content="https://haguku.jp/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF6F0;
+    --beige:#F3EBE3;
+    --beige-deep:#E9D9C6;
+    --terracotta:#C99B6E;
+    --terracotta-deep:#A56A3E;
+    --brown:#5C4636;
+    --brown-sub:#7A5C49;
+    --line:rgba(92,70,54,.14);
+    --shadow:0 18px 50px -28px rgba(92,70,54,.45);
+    --serif:"Zen Old Mincho", serif;
+    --sans:"Zen Kaku Gothic New", sans-serif;
+    --maxw:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:auto}
+  body{
+    font-family:var(--sans);
+    color:var(--brown);
+    background:var(--cream);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.02em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  /* 日本語の改行を整える：文節単位で折る＋最終行の孤立を抑制 */
+  h1,h2,h3,p,.eyebrow,figcaption{word-break:auto-phrase;line-break:strict;text-wrap:pretty}
+  h1,h2{text-wrap:balance}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{position:relative}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+    background:rgba(251,246,240,0);
+    transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+  }
+  header.scrolled{
+    background:rgba(251,246,240,.92);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 0 var(--line);
+    padding:10px 24px;
+  }
+  .logo{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:.04em;color:var(--brown)}
+  .logo small{font-family:var(--sans);font-size:10px;letter-spacing:.28em;display:block;color:var(--brown-sub);font-weight:500;margin-top:-2px}
+  .btn{
+    font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.04em;
+    background:var(--terracotta-deep);color:#fff;
+    padding:13px 22px;border-radius:999px;border:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;line-height:1.2;
+    box-shadow:0 10px 24px -12px rgba(165,106,62,.9);
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);background:#915a32;box-shadow:0 16px 30px -12px rgba(165,106,62,1)}
+  .btn .arrow{font-size:15px;transition:transform .25s ease}
+  .btn:hover .arrow{transform:translateX(3px)}
+  .btn-ghost{background:transparent;color:var(--terracotta-deep);border:1.5px solid var(--terracotta);box-shadow:none}
+  .btn-ghost:hover{background:rgba(201,155,110,.12);color:var(--terracotta-deep)}
+  .header-cta{font-size:13px;padding:11px 18px}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:150px 0 90px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--terracotta-deep);
+    background:rgba(201,155,110,.16);padding:7px 16px;border-radius:999px;margin-bottom:26px;
+  }
+  .hero h1{font-size:54px;line-height:1.32;font-weight:700;color:var(--brown)}
+  .hero h1 .mark{position:relative;white-space:nowrap}
+  .hero h1 .mark::after{
+    content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;
+    background:rgba(201,155,110,.4);border-radius:6px;z-index:-1;
+  }
+  .hero p.lead{font-size:17px;color:var(--brown-sub);margin:26px 0 34px;max-width:30em}
+  .hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .hero-note{font-size:12.5px;color:var(--brown-sub);margin-top:18px}
+  .trust{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+  .trust .item{display:flex;flex-direction:column}
+  .trust .num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--terracotta-deep);line-height:1}
+  .trust .lbl{font-size:11.5px;color:var(--brown-sub);margin-top:6px;letter-spacing:.04em}
+
+  /* ---------- Hero visual (photo) ---------- */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px}
+  .blob{
+    position:absolute;width:420px;height:420px;border-radius:46% 54% 58% 42%/52% 44% 56% 48%;
+    background:linear-gradient(150deg,var(--beige-deep),var(--terracotta));
+    opacity:.55;filter:blur(2px);animation:morph 12s ease-in-out infinite;
+  }
+  @keyframes morph{
+    0%,100%{border-radius:46% 54% 58% 42%/52% 44% 56% 48%}
+    50%{border-radius:58% 42% 44% 56%/46% 58% 42% 54%}
+  }
+  .hero-photo{
+    position:relative;width:340px;max-width:88%;aspect-ratio:3/4;
+    border-radius:26px;overflow:hidden;box-shadow:var(--shadow);
+    background:linear-gradient(160deg,var(--beige),var(--beige-deep));
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photo figcaption{
+    position:absolute;left:14px;bottom:14px;z-index:2;
+    background:rgba(251,246,240,.9);backdrop-filter:blur(6px);
+    color:var(--brown);font-size:12px;font-weight:700;padding:7px 14px;border-radius:999px;
+  }
+
+  /* ---------- Section heading ---------- */
+  .sec-head{text-align:center;max-width:42em;margin:0 auto 56px}
+  .sec-tag{font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--terracotta-deep);display:block;margin-bottom:14px}
+  .sec-head h2{font-size:36px;line-height:1.45;color:var(--brown)}
+  .sec-head p{font-size:16px;color:var(--brown-sub);margin-top:18px}
+
+  /* ---------- Empathy ---------- */
+  .empathy{background:var(--beige);padding:100px 0}
+  .empathy h2{font-size:32px;text-align:center;line-height:1.5;margin-bottom:48px}
+  .empathy h2 em{font-style:normal;color:var(--terracotta-deep)}
+  .check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:760px;margin:0 auto}
+  .check{
+    background:var(--cream);border-radius:16px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start;
+    border:1px solid var(--line);
+  }
+  .check .ic{
+    flex:none;width:30px;height:30px;border-radius:50%;background:rgba(201,155,110,.2);
+    display:flex;align-items:center;justify-content:center;color:var(--terracotta-deep);font-weight:700;font-size:15px;
+  }
+  .check p{font-size:15px;color:var(--brown);line-height:1.7}
+  .empathy-close{text-align:center;font-family:var(--serif);font-size:22px;color:var(--brown);margin-top:48px;line-height:1.7}
+  .empathy-close strong{color:var(--terracotta-deep);font-weight:700}
+
+  /* ---------- Loss / urgency ---------- */
+  .loss{padding:100px 0;text-align:center}
+  .loss .inner{max-width:680px;margin:0 auto;background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--terracotta);border-radius:14px;padding:44px 40px;text-align:left;box-shadow:var(--shadow)}
+  .loss h3{font-size:24px;line-height:1.5;margin-bottom:18px}
+  .loss p{font-size:15.5px;color:var(--brown-sub)}
+  .loss p .hl{color:var(--terracotta-deep);font-weight:700}
+
+  /* ---------- Method (3 steps) ---------- */
+  .method{background:var(--beige);padding:100px 0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{
+    background:var(--cream);border-radius:20px;padding:36px 28px;text-align:center;
+    border:1px solid var(--line);transition:transform .4s ease, box-shadow .4s ease;
+  }
+  .step:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .step .badge{font-size:11px;letter-spacing:.16em;color:var(--terracotta-deep);font-weight:700;display:block;margin-bottom:18px}
+  .art{width:84px;height:84px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;color:var(--terracotta-deep)}
+  .art svg{width:84px;height:84px;display:block}
+  .step h3{font-size:20px;margin-bottom:12px}
+  .step p{font-size:14.5px;color:var(--brown-sub)}
+
+  /* ---------- Before / After ---------- */
+  .ba{padding:100px 0}
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:42px}
+  .ba-card{background:var(--beige);border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+  .ba-photos{display:flex}
+  .ba-photo{flex:1;height:150px;position:relative;display:flex;align-items:center;justify-content:center}
+  .ba-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ba-photo .tag{position:absolute;top:10px;left:10px;z-index:2;font-size:10px;letter-spacing:.1em;font-weight:700;padding:3px 9px;border-radius:999px}
+  .ba-photo.before{background:#E6D6C4}
+  .ba-photo.before .tag{background:rgba(92,70,54,.16);color:var(--brown)}
+  .ba-photo.after{background:linear-gradient(160deg,#F5E3D0,#E8B98C)}
+  .ba-photo.after .tag{background:rgba(255,255,255,.7);color:var(--terracotta-deep)}
+  .ba-card .cap{padding:16px 18px;font-size:13px;color:var(--brown-sub)}
+  .ba-card .cap b{color:var(--brown);font-weight:700;font-family:var(--serif)}
+  .ba-metric{text-align:center;margin-top:8px}
+  .ba-metric .big{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--terracotta-deep);line-height:1}
+  .ba-metric .sub{font-size:14px;color:var(--brown-sub);margin-top:10px}
+
+  /* ---------- Voices ---------- */
+  .voices{background:var(--beige);padding:100px 0}
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .voice{background:var(--cream);border-radius:18px;padding:30px 26px;border:1px solid var(--line)}
+  .stars{color:var(--terracotta);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+  .voice p{font-size:14.5px;color:var(--brown);line-height:1.85}
+  .voice .who{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .voice .ava{width:40px;height:40px;border-radius:50%;background:var(--beige-deep);display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:var(--terracotta-deep);font-weight:700}
+  .voice .who span{font-size:12.5px;color:var(--brown-sub)}
+
+  /* ---------- Flow ---------- */
+  .flow{padding:100px 0}
+  .flow-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+  .flow-item{display:flex;gap:24px;padding:24px 0;position:relative}
+  .flow-item:not(:last-child){border-bottom:1px solid var(--line)}
+  .flow-no{flex:none;width:46px;height:46px;border-radius:50%;background:var(--terracotta-deep);color:#fff;font-family:var(--serif);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .flow-item h3{font-size:18px;margin-bottom:6px}
+  .flow-item p{font-size:14.5px;color:var(--brown-sub)}
+
+  /* ---------- Offer ---------- */
+  .offer{padding:100px 0}
+  .offer-card{
+    max-width:680px;margin:0 auto;background:linear-gradient(165deg,#fff,var(--beige));
+    border-radius:28px;padding:54px 44px;text-align:center;box-shadow:var(--shadow);
+    border:1px solid var(--line);position:relative;overflow:hidden;
+  }
+  .offer-card .ribbon{display:inline-block;background:var(--terracotta-deep);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;padding:8px 22px;border-radius:999px;margin-bottom:24px}
+  .offer-card h2{font-size:28px;line-height:1.5;margin-bottom:8px}
+  .offer-card .sub{font-size:14.5px;color:var(--brown-sub);margin-bottom:28px}
+  .price{display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:8px}
+  .price .old{font-size:20px;color:var(--brown-sub);text-decoration:line-through;text-decoration-color:var(--terracotta)}
+  .price .new{font-family:var(--serif);font-size:60px;font-weight:900;color:var(--terracotta-deep);line-height:1}
+  .price .yen{font-size:24px;font-weight:700}
+  .price-note{font-size:12.5px;color:var(--brown-sub);margin-bottom:26px}
+  .includes{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+  .includes span{background:rgba(201,155,110,.16);color:var(--terracotta-deep);font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:999px}
+  .btn-lg{font-size:16px;padding:18px 40px}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--beige);padding:100px 0}
+  .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:var(--cream);border-radius:14px;border:1px solid var(--line);overflow:hidden}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--brown)}
+  .faq-q .q{display:flex;gap:12px;align-items:flex-start}
+  .faq-q .q::before{content:"Q";font-family:var(--serif);color:var(--terracotta-deep);font-weight:700}
+  .faq-q .toggle{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(201,155,110,.18);color:var(--terracotta-deep);display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .3s ease}
+  .faq-item.open .toggle{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .faq-a p{padding:0 26px 24px 50px;font-size:14.5px;color:var(--brown-sub)}
+
+  /* ---------- Final CTA ---------- */
+  .final{padding:110px 0;text-align:center;background:linear-gradient(165deg,var(--beige),var(--beige-deep))}
+  .final h2{font-size:38px;line-height:1.5;margin-bottom:14px}
+  .final p{font-size:16px;color:var(--brown-sub);margin-bottom:36px}
+  .final-info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:48px;font-size:14px;color:var(--brown-sub)}
+  .final-info b{font-family:var(--serif);color:var(--brown);font-weight:700;display:block;margin-bottom:4px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--brown);color:#E9D9C6;padding:48px 0 36px;text-align:center}
+  footer .logo{color:#fff}
+  footer .logo small{color:#cdb9a4}
+  footer .fnav{display:flex;justify-content:center;gap:24px;margin:24px 0;font-size:13px;flex-wrap:wrap}
+  footer .fnav a{color:#E9D9C6;opacity:.85}
+  footer .copy{font-size:11.5px;color:#b29d88;margin-top:16px}
+
+  /* ---------- Mobile sticky CTA ---------- */
+  .mobile-cta{position:fixed;left:0;bottom:0;width:100%;z-index:90;padding:12px 16px;background:#FBF6F0;box-shadow:0 -1px 0 var(--line);display:none;transform:translateZ(0)}
+  .mobile-cta .btn{width:100%;justify-content:center}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero h1{font-size:40px}
+    .hero-visual{min-height:340px;order:-1}
+    .blob{width:320px;height:320px}
+    .steps,.ba-grid,.voice-grid{grid-template-columns:1fr}
+    .check-grid{grid-template-columns:1fr}
+    .sec-head h2,.empathy h2{font-size:27px}
+    .final h2{font-size:30px}
+    .header-cta{display:none}
+    .mobile-cta{display:block}
+    .final-info{gap:24px}
+    /* モバイルは余白を詰める（PC基準の100px → 62px） */
+    .wrap{padding:0 20px}
+    .hero{padding:112px 0 52px}
+    .empathy,.loss,.method,.ba,.voices,.flow,.offer,.faq{padding:62px 0}
+    .final{padding:74px 0}
+    .sec-head{margin-bottom:36px}
+    .empathy h2{margin-bottom:32px}
+    .empathy-close{margin-top:32px}
+    .loss .inner{padding:32px 24px}
+  }
+  @media(max-width:480px){
+    .hero h1{font-size:33px}
+    .price .new{font-size:48px}
+    .offer-card{padding:40px 24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header id="header">
+  <div class="logo">haguku<small>NAIL CARE STUDIO</small></div>
+  <a href="#offer" class="btn header-cta" data-cta="header">初回¥4,980で予約 <span class="arrow">→</span></a>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">自爪育成・ダメージケア専門</span>
+      <h1 class="reveal">通うほど、<br><span class="mark">自爪が育つ</span><br>ネイルサロン。</h1>
+      <p class="lead reveal">一般的なサロンは、続けるほど爪が傷む。haguku は逆。ダメージを修復しながら、ネイルを楽しめる「自爪育成」専門サロンです。</p>
+      <div class="hero-cta reveal">
+        <a href="#offer" class="btn btn-lg" data-cta="hero">初回限定¥4,980で予約する <span class="arrow">→</span></a>
+        <a href="#method" class="btn btn-ghost">育成メソッドを見る</a>
+      </div>
+      <p class="hero-note reveal">＼ 爪ダメージ診断つき・このページからのご予約限定 ／</p>
+      <div class="trust reveal">
+        <div class="item"><span class="num">12,000<span style="font-size:14px">件+</span></span><span class="lbl">累計施術実績</span></div>
+        <div class="item"><span class="num">92<span style="font-size:14px">%</span></span><span class="lbl">育成プログラム継続率</span></div>
+        <div class="item"><span class="num">97<span style="font-size:14px">%</span></span><span class="lbl">お客様満足度</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="blob"></div>
+      <figure class="hero-photo">
+        <img src="images/hero.jpg" alt="健康に整った自爪の手元（自爪育成の理想イメージ）" onerror="this.style.display='none'" />
+        <figcaption>3ヶ月後の、あなたの指先</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Empathy ============ -->
+<section class="empathy">
+  <div class="wrap">
+    <h2 class="reveal">「ネイル、そろそろやめなきゃ」<br>——そう思って<em>いませんか？</em></h2>
+    <div class="check-grid">
+      <div class="check reveal"><div class="ic">✓</div><p>オフしたら、地爪が薄くペラペラになっていた</p></div>
+      <div class="check reveal"><div class="ic">✓</div><p>ネイルを塗るとき、少し痛みを感じることがある</p></div>
+      <div class="check reveal"><div class="ic">✓</div><p>爪が変形してきた気がして、自分の指先に自信がない</p></div>
+      <div class="check reveal"><div class="ic">✓</div><p>でも、ネイルのおしゃれは諦めたくない</p></div>
+    </div>
+    <p class="empathy-close reveal">その気持ち、<strong>犠牲にしなくて大丈夫です。</strong></p>
+  </div>
+</section>
+
+<!-- ============ Loss / urgency ============ -->
+<section class="loss">
+  <div class="wrap">
+    <div class="inner reveal">
+      <h3>爪のダメージは、<br>放っておくほど回復に時間がかかります。</h3>
+      <p>薄くなった爪・変形した爪は、自己流ケアや通常のネイルでは戻りにくいもの。でも、正しい育成ケアを始めれば、爪はちゃんと応えてくれます。——問題は、<span class="hl">「いつ始めるか」</span>だけ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Method ============ -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">THE haguku METHOD</span>
+      <h2>なぜ、通うほど<br>自爪が育つのか。</h2>
+      <p>「診断 → 専用育成プラン → ケアしながら楽しむネイル」。爪の状態を可視化し、補強・保湿・育成を組み合わせるから、おしゃれを楽しみながら地爪が強くなっていきます。</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="badge">STEP 01</span>
+        <div class="art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="27" cy="27" r="16" fill="rgba(201,155,110,.12)"/><path d="M22 31 v-6 a5 5 0 0 1 10 0 v6 z"/><line x1="38.5" y1="38.5" x2="52" y2="52" stroke-width="3"/></svg></div>
+        <h3>爪ダメージ診断</h3>
+        <p>薄さ・乾燥・変形のレベルをプロが可視化。あなたの爪が今どんな状態かを、はっきり知るところから。</p>
+      </div>
+      <div class="step reveal">
+        <span class="badge">STEP 02</span>
+        <div class="art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 52 V33" stroke="#8a9f6b"/><path d="M32 39 C24 38 18 32 18 22 C26 23 31 30 32 39 Z" fill="rgba(143,159,107,.18)" stroke="#8a9f6b"/><path d="M32 34 C40 33 46 27 46 18 C38 19 33 25 32 34 Z" fill="rgba(143,159,107,.18)" stroke="#8a9f6b"/><path d="M22 52 h20"/></svg></div>
+        <h3>専用育成プラン</h3>
+        <p>補強・保湿・甘皮ケアを組み合わせた、あなただけの回復プランを設計。無理なく続けられる頻度をご提案します。</p>
+      </div>
+      <div class="step reveal">
+        <span class="badge">STEP 03</span>
+        <div class="art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 48 V30 a10 10 0 0 1 20 0 v18 z" fill="rgba(201,155,110,.12)"/><path d="M23 36 q9 4 18 0"/><path d="M50 11 l1.7 4.6 4.6 1.7 -4.6 1.7 -1.7 4.6 -1.7 -4.6 -4.6 -1.7 4.6 -1.7 z" fill="rgba(201,155,110,.22)" stroke-width="1.8"/></svg></div>
+        <h3>楽しむネイル</h3>
+        <p>育成と両立できるデザインで、指先のおしゃれも妥協しない。「ケア中だから我慢」は、もう必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Before / After ============ -->
+<section class="ba">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">BEFORE / AFTER</span>
+      <h2>3ヶ月で、ここまで変わる。</h2>
+      <p>もう、隠さなくていい指先へ。haguku に通われたお客様の、自爪育成の記録です。</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <div class="ba-photos">
+          <div class="ba-photo before"><span class="tag">BEFORE</span><img loading="lazy" decoding="async" src="images/ba-01-before.jpg" alt="施術前の自爪（薄さ・痛み）"></div>
+          <div class="ba-photo after"><span class="tag">AFTER</span><img loading="lazy" decoding="async" src="images/ba-01-after.jpg" alt="施術後の自爪（厚みが戻った）"></div>
+        </div>
+        <p class="cap"><b>K.Sさん</b>／ネイル歴8年・薄さと痛み<br>3ヶ月で痛みが消え、地爪に厚みが戻った。</p>
+      </div>
+      <div class="ba-card reveal">
+        <div class="ba-photos">
+          <div class="ba-photo before"><span class="tag">BEFORE</span><img loading="lazy" decoding="async" src="images/ba-02-before.jpg" alt="施術前の自爪（変形・波打ち）"></div>
+          <div class="ba-photo after"><span class="tag">AFTER</span><img loading="lazy" decoding="async" src="images/ba-02-after.jpg" alt="施術後の自爪（なめらかに整った）"></div>
+        </div>
+        <p class="cap"><b>M.Yさん</b>／ネイル歴12年・変形<br>波打っていた爪表面がなめらかに整った。</p>
+      </div>
+      <div class="ba-card reveal">
+        <div class="ba-photos">
+          <div class="ba-photo before"><span class="tag">BEFORE</span><img loading="lazy" decoding="async" src="images/ba-03-before.jpg" alt="施術前の自爪（二枚爪・欠け）"></div>
+          <div class="ba-photo after"><span class="tag">AFTER</span><img loading="lazy" decoding="async" src="images/ba-03-after.jpg" alt="施術後の自爪（先端がしっかり伸びた）"></div>
+        </div>
+        <p class="cap"><b>A.Tさん</b>／ネイル歴5年・二枚爪<br>欠けやすかった先端がしっかり伸びるように。</p>
+      </div>
+    </div>
+    <div class="ba-metric reveal">
+      <span class="big">平均 1.4倍</span>
+      <p class="sub">3ヶ月の育成プログラムで戻った、地爪の厚み（当サロン調べ）</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Voices ============ -->
+<section class="voices">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">VOICE</span>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <p>「もうネイルは諦めるしかないと思ってました。でも爪が元気になっていくのが毎月の楽しみになって、また指先が好きになれた。早く来ればよかった。」</p>
+        <div class="who"><div class="ava">K</div><span>30代・ネイル歴8年<br>会社員</span></div>
+      </div>
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <p>「最初の診断で“なぜ薄くなるのか”を説明してもらえて納得。任せて大丈夫だと思えました。デザインも我慢しなくていいのが嬉しい。」</p>
+        <div class="who"><div class="ava">M</div><span>40代・ネイル歴12年<br>自営業</span></div>
+      </div>
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <p>「ケア専門って高いイメージでしたが、初回が試しやすくて踏み出せました。3ヶ月で爪の縦すじが目立たなくなって感動。」</p>
+        <div class="who"><div class="ava">A</div><span>30代・ネイル歴5年<br>主婦</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Flow ============ -->
+<section class="flow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">FIRST VISIT</span>
+      <h2>初回の流れ</h2>
+      <p>「何をすればいいか分からない」を、最初の60分で解消します。</p>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item reveal"><div class="flow-no">1</div><div><h3>爪ダメージ診断</h3><p>薄さ・乾燥・変形をチェックし、今の状態を一緒に確認します。</p></div></div>
+      <div class="flow-item reveal"><div class="flow-no">2</div><div><h3>あなた専用プランのご提案</h3><p>回復までの道のりと、無理のない通い方をご提案。料金も明朗にお伝えします。</p></div></div>
+      <div class="flow-item reveal"><div class="flow-no">3</div><div><h3>ケア＆ネイル施術</h3><p>補強・保湿ケアと、育成と両立するデザインを施術。その日から指先が変わります。</p></div></div>
+      <div class="flow-item reveal"><div class="flow-no">4</div><div><h3>自宅ケアのアドバイス</h3><p>サロンの外でも爪が育つよう、毎日のケア方法をお伝えします。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Offer ============ -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="offer-card reveal">
+      <span class="ribbon">このページからのご予約限定</span>
+      <h2>初回限定｜爪ダメージ診断＋ケア体験</h2>
+      <p class="sub">専門家による爪の状態診断と、あなた専用ケアプラン、施術1回がセットに。</p>
+      <div class="price">
+        <span class="old">¥9,800</span>
+        <span class="new"><span class="yen">¥</span>4,980</span>
+      </div>
+      <p class="price-note">税込／所要約60分／お一人さま1回限り</p>
+      <div class="includes">
+        <span>爪ダメージ診断</span>
+        <span>専用ケアプラン提案</span>
+        <span>ケア＆ネイル施術1回</span>
+        <span>自宅ケアアドバイス</span>
+      </div>
+      <a href="#" class="btn btn-lg" data-cta="offer">この価格で予約する <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Q &amp; A</span>
+      <h2>よくあるご質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="q">2回目以降の料金も高いのでは？</span><span class="toggle">+</span></div>
+        <div class="faq-a"><p>初回の診断時に、回復までの目安と料金をすべて明朗にお伝えします。通常メニューは一般的なサロンと同等の価格帯。育成ケアは「足し算」ではなく施術に組み込むので、想像より続けやすいとよく言われます。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="q">施術中に痛みはありますか？</span><span class="toggle">+</span></div>
+        <div class="faq-a"><p>ダメージのある爪に負担をかけない方法でケアするため、痛みはほとんどありません。むしろ続けるうちに、施術時の違和感が和らいでいく方が多いです。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="q">どのくらいの頻度で通えばいい？</span><span class="toggle">+</span></div>
+        <div class="faq-a"><p>爪の状態によって異なりますが、目安は3〜4週間に1回。診断のうえ、あなたの爪と生活に合った無理のないペースをご提案します。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="q">ダメージがかなり進んでいても大丈夫？</span><span class="toggle">+</span></div>
+        <div class="faq-a"><p>はい。薄さ・変形・二枚爪など、これまで自己流では戻らなかった爪こそ専門ケアの出番です。まずは診断で状態を確認させてください。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Final CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="reveal">爪を犠牲にする時代は、<br>終わりにしませんか。</h2>
+    <p class="reveal">ネイルを楽しむほど、自爪が育っていく。その実感を、まずは初回体験で。</p>
+    <a href="#offer" class="btn btn-lg reveal" data-cta="final">初回¥4,980で予約する <span class="arrow">→</span></a>
+    <div class="final-info reveal">
+      <div><b>営業時間</b>10:00 – 20:00（最終受付19:00）</div>
+      <div><b>定休日</b>火曜日</div>
+      <div><b>アクセス</b>表参道駅 A2出口 徒歩4分</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="wrap">
+    <div class="logo">haguku<small>NAIL CARE STUDIO</small></div>
+    <div class="fnav">
+      <a href="#method">育成メソッド</a>
+      <a href="#offer">初回メニュー</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#">アクセス</a>
+    </div>
+    <p class="copy">© 2026 haguku nail care studio. このページはデモ用に制作されたものです。</p>
+  </div>
+</footer>
+
+<!-- ============ Mobile sticky CTA ============ -->
+<div class="mobile-cta">
+  <a href="#offer" class="btn" data-cta="mobile">初回限定¥4,980で予約する <span class="arrow">→</span></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.0.42/lenis.min.js"></script>
+<script>
+  /* ----- Smooth scroll (Lenis) ----- */
+  let lenis;
+  if (window.Lenis) {
+    lenis = new Lenis({ duration: 1.1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
+  /* ----- Header scrolled state ----- */
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  /* ----- Anchor links via Lenis ----- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); lenis ? lenis.scrollTo(el, { offset: -70 }) : el.scrollIntoView({behavior:'smooth'}); }
+      }
+    });
+  });
+
+  /* ----- Reveal animations (GSAP) ----- */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    if (lenis) lenis.on('scroll', ScrollTrigger.update);
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+    /* stagger groups */
+    ['.check', '.step', '.ba-card', '.voice', '.flow-item', '.includes span'].forEach(sel => {
+      const items = gsap.utils.toArray(sel);
+      if (items.length > 1 && items[0].closest('section')) {
+        ScrollTrigger.create({
+          trigger: items[0].closest('section'), start: 'top 75%',
+          onEnter: () => gsap.to(items, { opacity:1, y:0, duration:.7, stagger:.08, ease:'power2.out' })
+        });
+      }
+    });
+  }
+
+  /* ----- FAQ accordion ----- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  /* ----- Conversion tracking (booking CTA) -----
+     予約ボタンのクリックを計測。本番ではこの2行を
+     GA4: gtag('event','reservation_click',{cta_location:loc})
+     / Meta: fbq('track','Lead') などに置き換えるだけ。 */
+  window.dataLayer = window.dataLayer || [];
+  document.querySelectorAll('[data-cta]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const loc = btn.getAttribute('data-cta');
+      window.dataLayer.push({ event: 'reservation_click', cta_location: loc });
+      console.log('[haguku] reservation_click:', loc);
+    });
+  });
+
+  /* ----- A/B test hook (FV headline B vs C) -----
+     ?ab=c で方向C（専門特化）の見出しに差し替え、計測と紐付け可能にする雛形。 */
+  const variant = new URLSearchParams(location.search).get('ab') === 'c' ? 'C' : 'B';
+  if (variant === 'C') {
+    const h1 = document.querySelector('.hero h1');
+    const lead = document.querySelector('.hero .lead');
+    if (h1) h1.innerHTML = '薄い爪、痛む爪、<br><span class="mark">変形した爪</span>。<br>その“ダメージ”だけを。';
+    if (lead) lead.textContent = '自己流ケアでも、普通のサロンでも治らなかった爪へ。プロが状態を診断し、あなた専用の育成プランを設計します。';
+  }
+  window.dataLayer.push({ event: 'ab_variant_view', variant });
+</script>
+</body>
+</html>

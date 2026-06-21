@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Hiragino Mincho ProN','Yu Mincho',serif">
+  <rect width="1200" height="630" fill="#FBF6F0"/>
+
+  <ellipse cx="1010" cy="300" rx="300" ry="300" fill="#EAD9C5"/>
+  <ellipse cx="1065" cy="345" rx="215" ry="215" fill="#D7B186" opacity="0.5"/>
+
+  <g transform="translate(900,150)">
+    <rect x="0" y="0" width="225" height="280" rx="24" fill="#FBF6F0"/>
+    <text x="112" y="48" text-anchor="middle" font-size="15" fill="#7A5C49" font-family="sans-serif">3ヶ月後の、あなたの指先</text>
+    <g fill="#EAD0B6">
+      <rect x="36" y="158" width="23" height="88" rx="11"/>
+      <rect x="67" y="126" width="23" height="120" rx="11"/>
+      <rect x="98" y="112" width="23" height="134" rx="11"/>
+      <rect x="129" y="130" width="23" height="116" rx="11"/>
+      <rect x="160" y="166" width="23" height="80" rx="11"/>
+    </g>
+    <g fill="#F8EADB">
+      <circle cx="47.5" cy="168" r="9"/><circle cx="78.5" cy="136" r="9"/><circle cx="109.5" cy="122" r="9"/><circle cx="140.5" cy="140" r="9"/><circle cx="171.5" cy="176" r="9"/>
+    </g>
+  </g>
+
+  <text x="80" y="118" font-size="30" font-weight="700" fill="#A56A3E" letter-spacing="3">haguku</text>
+  <text x="82" y="160" font-size="18" fill="#7A5C49" font-family="sans-serif" letter-spacing="2">自爪育成・ダメージケア専門サロン</text>
+
+  <rect x="80" y="332" width="406" height="18" fill="#E7C9A6"/>
+  <text x="78" y="288" font-size="78" font-weight="700" fill="#5C4636">通うほど、</text>
+  <text x="78" y="382" font-size="78" font-weight="700" fill="#5C4636">自爪が育つ。</text>
+
+  <text x="82" y="452" font-size="24" fill="#7A5C49" font-family="sans-serif">ダメージを修復しながら、ネイルを楽しめる。</text>
+
+  <rect x="80" y="500" width="446" height="60" rx="30" fill="#A56A3E"/>
+  <text x="303" y="539" text-anchor="middle" font-size="23" font-weight="700" fill="#FBF6F0" font-family="sans-serif">初回¥4,980｜爪ダメージ診断つき</text>
+</svg>
